@@ -9,11 +9,11 @@ import org.junit.Assert.*
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class MainTest {
-    private val main = Main()
+class LibraryDemoTest {
+    private val libraryDemo = LibraryDemo()
 
     @Test
     fun `library name is correct`() {
-        assertEquals("Android Library Template", main.getLibraryName())
+        assertEquals("Android Library Template", libraryDemo.getLibraryName())
     }
 }

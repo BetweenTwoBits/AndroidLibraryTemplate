@@ -1,5 +1,5 @@
 package com.betweentwobits.androidlibtemplate
 
-class Main {
+class LibraryDemo {
     fun getLibraryName() = "Android Library Template"
 }
