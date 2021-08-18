@@ -46,8 +46,8 @@ afterEvaluate {
                 from components.release
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = 'com.betweentwobits.androidlibtemplate'
-                artifactId = 'lib'
+                groupId = 'com.betweentwobits'
+                artifactId = 'androidlibrarytemplate'
                 version = '1.0'
             }
         }
