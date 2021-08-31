@@ -1,0 +1,36 @@
+apply plugin: 'maven-publish'
+
+def LIB_GROUP_ID = 'com.betweentwobits'
+def LIB_ARTIFACT_ID = 'androidlibrarytemplate'
+def LIB_VERSION = '1.0.1'
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                name = "GithubPackages"
+                url = uri("https://maven.pkg.github.com/BetweenTwoBits/AndroidLibraryTemplate")
+                credentials {
+                    username = project.properties['GITHUB_USER']
+                    password = project.properties['GITHUB_PERSONAL_ACCESS_TOKEN']
+                }
+            }
+        }
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId LIB_GROUP_ID
+                artifactId LIB_ARTIFACT_ID
+                version LIB_VERSION
+
+                artifact(sourceJar)
+            }
+        }
+    }
+}
